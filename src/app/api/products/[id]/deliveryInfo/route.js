@@ -41,7 +41,7 @@ export async function POST(request){
                 name: 'e-Comm',
                 description: 'Test Transaction',
                 order_id: order.id, // This is the order_id created in the backend
-                callback_url: 'http://localhost:3000/home', // Your success URL
+                callback_url: 'https://e-comm-olive.vercel.app/home', // Your success URL
                 prefill: {
                   name: 'Aniket',
                   email: 'aniket@example.com',
