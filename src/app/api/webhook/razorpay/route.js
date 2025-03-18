@@ -18,6 +18,9 @@ export async function POST(req){
             .update(body)
             .digest("hex");
 
+        console.log("******* sign: ", signature)
+        console.log("##### expectedSign:", expectedSignature)
+
         if(expectedSignature !== signature){
             return NextResponse.json({ error: "Invalid signature" }, { status: 400 })
         }
@@ -36,10 +39,11 @@ export async function POST(req){
                     status: "completed",
 
                 }
-            ).populate(
-                //[ { path: "productId", select: "name" },
-                // { path: "userId", select: "email" } ]
             )
+            //     .populate(
+            //     //[ { path: "productId", select: "name" },
+            //     // { path: "userId", select: "email" } ]
+            // )
 
             // if(order){
             //     const transporter = nodemailer.createTransport({
